@@ -23,7 +23,8 @@ from sales.customers sc
 join sales.orders so on sc.CustomerID = so.customerid
 join sales.orderlines sol on so.OrderID = sol.OrderID
 join warehouse.StockItemHoldings ws on sol.StockItemID = ws.StockItemID
-group by sc.CustomerId, sc.CustomerName
+group by sc.CustomerId, sc.CustomerName 
+order by 3 desc 
 ) a join (select * from cte1
 where RK = 1) b on a.CustomerID = b.CustomerID
 join (select * from cte1
