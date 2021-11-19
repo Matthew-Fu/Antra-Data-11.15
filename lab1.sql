@@ -52,4 +52,6 @@ where ip.quantity>sd.quantity
 
 -- All Cities in USA that we do not have a customer in
 select distinct CityName from Application.Cities
-where CityID not in (select DeliveryCityID from Sales.Customers)
+where CityID not in (select DeliveryCityID from Sales.Customers) 
+and StateProvinceID in (select StateProvinceID from Application.StateProvinces);
+
